@@ -4,7 +4,7 @@ Select
   , amount / 100 as amount
 
 from 
-  raw.stripe.payment
+  {{ source('stripe', 'payment')}}
 
 where 
   status = 'success'

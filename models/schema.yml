@@ -33,3 +33,17 @@ models:
         tests:
           - accepted_values:
               values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
+  - name: orders
+    description: '{{ doc("table_orders") }}'
+    columns:
+      - name: order_id
+        description: Primary Key
+        tests:
+          - not_null
+  - name: stg_payments
+    description: This model adds stages payments and translates amount to dollars and filters failed payments
+    columns:
+      - name: order_id
+        description: Primary Key
+        tests:
+          - not_null

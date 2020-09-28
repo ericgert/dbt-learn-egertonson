@@ -5,4 +5,4 @@ select
     status
 
 from 
-    raw.jaffle_shop.orders
+    {{ source('jaffle_shop', 'orders')}}
